@@ -1,0 +1,150 @@
+{
+  "user_acquisition": {
+    "2024": {
+      "total_acquired": 267179,
+      "avg_daily": 729,
+      "peak_day": "1 Apr 2024",
+      "peak_day_count": 1808,
+      "final_cumulative": 288636
+    },
+    "2025": {
+      "total_acquired": 130119,
+      "avg_daily": 474,
+      "peak_day": "3 May 2025",
+      "peak_day_count": 1491,
+      "final_cumulative": 418755,
+      "countries": {
+        "Egypt": 139440,
+        "Senegal": 41743,
+        "C\u00f4te d'Ivoire": 0,
+        "United Kingdom": 696,
+        "United States": 1220
+      }
+    }
+  },
+  "dau": {
+    "2024": {
+      "avg_dau": 2963,
+      "peak_dau": 4142,
+      "peak_date": "1 Apr 2024",
+      "min_dau": 2111
+    },
+    "2025": {
+      "avg_dau": 2075,
+      "peak_dau": 3099,
+      "peak_date": "16 Feb 2025",
+      "min_dau": 1406
+    }
+  },
+  "mau": {
+    "2024": {
+      "avg_mau": 25544,
+      "peak_mau": 33046,
+      "peak_date": "8 Apr 2024"
+    },
+    "2025": {
+      "avg_mau": 19437,
+      "peak_mau": 24275,
+      "peak_date": "30 May 2025"
+    }
+  },
+  "installed_audience": {
+    "2024": {
+      "start": 8938,
+      "end": 20807,
+      "peak": 21400,
+      "peak_date": "10 May 2024"
+    },
+    "2025": {
+      "start": 20788,
+      "end": 15530,
+      "peak": 22011,
+      "peak_date": "24 May 2025"
+    }
+  },
+  "rating": {
+    "2024": {
+      "avg_rating": 4.09,
+      "highest": 4.46,
+      "lowest": 3.8
+    },
+    "2025": {
+      "avg_rating": 4.04,
+      "highest": 4.34,
+      "lowest": 3.8
+    }
+  },
+  "crashes": {
+    "2024": {
+      "total_crashes": 34605,
+      "avg_daily": 94,
+      "worst_day": "1 Sept 2024",
+      "worst_day_count": 144
+    },
+    "2025": {
+      "total_crashes": 19747,
+      "avg_daily": 72,
+      "worst_day": "24 Jan 2025",
+      "worst_day_count": 156
+    }
+  },
+  "admob": {
+    "2024": {
+      "total_earnings": 5154.82,
+      "total_impressions": 2139805,
+      "total_clicks": 84057,
+      "avg_ecpm": 2.61,
+      "best_day": "2024-03-22",
+      "best_day_earnings": 24.54,
+      "avg_daily_earnings": 7.04,
+      "avg_daily_impressions": 2923
+    },
+    "2025": {
+      "total_earnings": 2985.63,
+      "total_impressions": 813589,
+      "total_clicks": 41882,
+      "avg_ecpm": 4.18,
+      "best_day": "2025-05-04",
+      "best_day_earnings": 24.83,
+      "avg_daily_earnings": 5.45,
+      "avg_daily_impressions": 1484
+    }
+  },
+  "comparisons": {
+    "user_acquisition": {
+      "2024": 267179,
+      "2025": 130119,
+      "change_pct": -51.3
+    },
+    "dau": {
+      "2024": 2963,
+      "2025": 2075,
+      "change_pct": -29.97
+    },
+    "mau": {
+      "2024": 25544,
+      "2025": 19437,
+      "change_pct": -23.91
+    },
+    "rating": {
+      "2024": 4.09,
+      "2025": 4.04,
+      "change": -0.05
+    },
+    "crashes": {
+      "2024": 94,
+      "2025": 72,
+      "change_pct": -23.4
+    },
+    "admob_earnings": {
+      "2024": 5154.82,
+      "2025": 2985.63,
+      "change_pct": -42.08
+    },
+    "admob_impressions": {
+      "2024": 2139805,
+      "2025": 813589,
+      "change_pct": -61.98
+    }
+  }
+}

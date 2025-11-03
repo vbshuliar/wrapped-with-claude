@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple of Fortune - 2025 Wrapped</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+            height: 100vh;
+        }
+
+        /* Section styling */
+        section {
+            height: 100vh;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        /* Gradient backgrounds */
+        .gradient-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .gradient-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .gradient-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .gradient-4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .gradient-5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .gradient-6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .gradient-7 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+        .gradient-8 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+        .gradient-9 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+        .gradient-10 { background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%); }
+        .gradient-11 { background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%); }
+        .gradient-12 { background: linear-gradient(135deg, #ee9ca7 0%, #ffdde1 100%); }
+        .gradient-dark { background: linear-gradient(135deg, #000000 0%, #434343 100%); }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 4px 20px rgba(0,0,0,0.4);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h2 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            opacity: 0.95;
+            max-width: 700px;
+            text-align: center;
+            line-height: 1.5;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .big-number {
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            font-weight: 900;
+            margin: 0.5rem 0;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.5), 0 4px 30px rgba(0,0,0,0.4);
+            animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+        }
+
+        .emoji {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin: 0.5rem 0;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+            animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+        }
+
+        /* Comparison cards */
+        .comparison {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .year-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            min-width: 160px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .year-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        .year-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .year-value {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 900;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        .change-badge {
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 700;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .change-badge.positive {
+            background: rgba(67, 233, 123, 0.35);
+        }
+
+        .change-badge.negative {
+            background: rgba(245, 87, 108, 0.35);
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem 0;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 0.5rem 0;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        .stat-detail {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Country list */
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            margin: 2rem 0;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .country-card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .country-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        .country-flag {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        .country-name {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .country-value {
+            font-size: 2rem;
+            font-weight: 900;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            opacity: 0.7;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison {
+                gap: 1.5rem;
+            }
+
+            .year-card {
+                min-width: 150px;
+                padding: 1.5rem 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+
+        /* Loading state */
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 2rem;
+        }
+
+        .error {
+            color: #ff6b6b;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Logo and images */
+        .logo-container {
+            margin: 1rem 0 0.5rem 0;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .screenshots-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+
+        .screenshot {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .screenshot:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 100px;
+            }
+
+            .screenshot {
+                max-width: 150px;
+            }
+
+            .screenshots-container {
+                gap: 0.8rem;
+            }
+        }
+
+        /* Tessl button */
+        .tessl-button {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.7rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+
+        .tessl-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .tessl-button:active {
+            transform: translateY(-1px);
+        }
+
+        /* Navigation arrows */
+        .nav-arrow {
+            position: fixed;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-arrow:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: scale(1.1);
+        }
+
+        .nav-arrow.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .nav-arrow-up {
+            top: 50%;
+            transform: translateY(-60px);
+        }
+
+        .nav-arrow-down {
+            top: 50%;
+            transform: translateY(10px);
+        }
+
+        .nav-arrow svg {
+            width: 24px;
+            height: 24px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        @media (max-width: 768px) {
+            .nav-arrow {
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+            }
+
+            .nav-arrow svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div id="app"></div>
+
+    <!-- Navigation arrows -->
+    <div class="nav-arrow nav-arrow-up" id="navUp" onclick="navigateUp()">
+        <svg viewBox="0 0 24 24" fill="none">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </div>
+    <div class="nav-arrow nav-arrow-down" id="navDown" onclick="navigateDown()">
+        <svg viewBox="0 0 24 24" fill="none">
+            <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+    </div>
+
+    <script>
+        let insights = null;
+
+        async function loadInsights() {
+            try {
+                const response = await fetch('../data/insights.json');
+                insights = await response.json();
+                renderWrapped();
+                setupScrollProgress();
+            } catch (error) {
+                console.error('Error loading insights:', error);
+                document.getElementById('app').innerHTML = `
+                    <section class="gradient-1">
+                        <h1 class="error">Error Loading Data</h1>
+                        <p class="subtitle">Please make sure insights.json exists in the data folder.<br>Error: ${error.message}</p>
+                    </section>
+                `;
+            }
+        }
+
+        function formatNumber(num) {
+            return num.toLocaleString();
+        }
+
+        function renderWrapped() {
+            const ua = insights.user_acquisition;
+            const dau = insights.dau;
+            const mau = insights.mau;
+            const installed = insights.installed_audience;
+            const rating = insights.rating;
+            const crashes = insights.crashes;
+            const comp = insights.comparisons;
+
+            const html = `
+                <!-- Welcome Section -->
+                <section class="gradient-1">
+                    <div class="logo-container">
+                        <img src="../images/logo.png" alt="Apple of Fortune Logo" class="logo">
+                    </div>
+                    <h1>Apple of Fortune</h1>
+                    <h2>Your 2025 Wrapped</h2>
+                    <p class="subtitle">A FREE, offline mobile Android game that somehow survived another year<br><br>
+                    <small style="opacity: 0.7; font-size: 0.9rem;">Data extracted from Google Play Developer Console<br>December 2023 - October 2025</small></p>
+                    <a href="https://github.com/vbshuliar/wrapped-with-claude" target="_blank" rel="noopener noreferrer" class="tessl-button">
+                        📋 Check out Tessl spec for this web app
+                    </a>
+                    <div class="screenshots-container">
+                        <img src="../images/gameplay.webp" alt="Gameplay Screenshot 1" class="screenshot">
+                        <img src="../images/gameplay2.webp" alt="Gameplay Screenshot 2" class="screenshot">
+                    </div>
+                    <div class="scroll-indicator">
+                        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                </section>
+
+                <!-- User Acquisition Total + YoY -->
+                <section class="gradient-2">
+                    <div class="emoji">🚀</div>
+                    <h2>New Players in 2025</h2>
+                    <div class="big-number">${formatNumber(ua['2025'].total_acquired)}</div>
+                    <p class="subtitle">Fresh victims... er, players joined your FREE Android game</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 New Players</div>
+                            <div class="year-value">${formatNumber(comp.user_acquisition['2024'])}</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">Total (All Time)</div>
+                            <div class="year-value">${formatNumber(ua['2025'].final_cumulative)}</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${comp.user_acquisition.change_pct > 0 ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${comp.user_acquisition.change_pct > 0 ? '↑' : '↓'} ${Math.abs(comp.user_acquisition.change_pct).toFixed(1)}% from 2024
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">${comp.user_acquisition.change_pct > 0 ? 'Growth! Did you finally fix the bugs?' : 'Down 51%... well, at least you\'re consistently going down. That takes skill!'}</em></p>
+                </section>
+
+                <!-- Peak Acquisition Day -->
+                <section class="gradient-5">
+                    <div class="emoji">🎯</div>
+                    <h2>Peak Acquisition Day</h2>
+                    <div class="big-number">${formatNumber(ua['2025'].peak_day_count)}</div>
+                    <p class="subtitle">Players acquired on ${ua['2025'].peak_day}</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 Peak</div>
+                            <div class="year-value">${formatNumber(insights.user_acquisition['2024'].peak_day_count)}</div>
+                            <div class="stat-detail">${insights.user_acquisition['2024'].peak_day}</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">Average Daily</div>
+                            <div class="year-value">${Math.round(ua['2025'].avg_daily)}</div>
+                            <div class="stat-detail">new players/day</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${ua['2025'].peak_day_count > insights.user_acquisition['2024'].peak_day_count ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${ua['2025'].peak_day_count > insights.user_acquisition['2024'].peak_day_count ? '↑' : '↓'} ${Math.abs(((ua['2025'].peak_day_count - insights.user_acquisition['2024'].peak_day_count) / insights.user_acquisition['2024'].peak_day_count * 100)).toFixed(1)}% from 2024 peak
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">Did you pay people to download it? Just kidding... unless? 👀</em></p>
+                </section>
+
+                <!-- Daily Active Users + Trend -->
+                <section class="gradient-6">
+                    <div class="emoji">👥</div>
+                    <h2>Daily Active Players</h2>
+                    <div class="big-number">${formatNumber(dau['2025'].avg_dau)}</div>
+                    <p class="subtitle">Average players engaging every day in 2025</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 Average DAU</div>
+                            <div class="year-value">${formatNumber(comp.dau['2024'])}</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">Retention Rate</div>
+                            <div class="year-value">${((dau['2025'].avg_dau / ua['2025'].final_cumulative) * 100).toFixed(2)}%</div>
+                            <div class="stat-detail">of total installs</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${comp.dau.change_pct > 0 ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${comp.dau.change_pct > 0 ? '↑' : '↓'} ${Math.abs(comp.dau.change_pct).toFixed(1)}% from 2024
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">${comp.dau.change_pct > 0 ? 'More people playing! Did you fix the bugs?' : 'Down 30%... fewer people opening the app. At least they\'re saving battery life.'}</em></p>
+                </section>
+
+                <!-- Peak DAU -->
+                <section class="gradient-8">
+                    <div class="emoji">🔥</div>
+                    <h2>Peak Engagement Day</h2>
+                    <div class="big-number">${formatNumber(dau['2025'].peak_dau)}</div>
+                    <p class="subtitle">Active players on ${dau['2025'].peak_date}</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 Peak</div>
+                            <div class="year-value">${formatNumber(insights.dau['2024'].peak_dau)}</div>
+                            <div class="stat-detail">${insights.dau['2024'].peak_date}</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">Average DAU</div>
+                            <div class="year-value">${formatNumber(dau['2025'].avg_dau)}</div>
+                            <div class="stat-detail">daily players</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${dau['2025'].peak_dau > insights.dau['2024'].peak_dau ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${dau['2025'].peak_dau > insights.dau['2024'].peak_dau ? '↑' : '↓'} ${Math.abs(((dau['2025'].peak_dau - insights.dau['2024'].peak_dau) / insights.dau['2024'].peak_dau * 100)).toFixed(1)}% from 2024 peak
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">${dau['2025'].peak_dau > insights.dau['2024'].peak_dau ? 'New record! Everyone playing at once!' : 'Lower peak than 2024, but at least the phones weren\'t heating up as much!'}</em></p>
+                </section>
+
+                <!-- Monthly Active Users + Trend -->
+                <section class="gradient-9">
+                    <div class="emoji">📅</div>
+                    <h2>Monthly Active Players</h2>
+                    <div class="big-number">${formatNumber(mau['2025'].avg_mau)}</div>
+                    <p class="subtitle">Average monthly active users in 2025</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 Average MAU</div>
+                            <div class="year-value">${formatNumber(comp.mau['2024'])}</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">2025 Peak MAU</div>
+                            <div class="year-value">${formatNumber(mau['2025'].peak_mau)}</div>
+                            <div class="stat-detail">${mau['2025'].peak_date}</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${comp.mau.change_pct > 0 ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${comp.mau.change_pct > 0 ? '↑' : '↓'} ${Math.abs(comp.mau.change_pct).toFixed(1)}% from 2024
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">${comp.mau.change_pct > 0 ? 'Monthly engagement is up! Someone is hooked.' : 'Down 24%... they opened the app at least once a month. Some might have even played.'}</em></p>
+                </section>
+
+                <!-- Player Rating + Evolution -->
+                <section class="gradient-11">
+                    <div class="emoji">⭐</div>
+                    <h2>Player Love (or Tolerance)</h2>
+                    <div class="big-number">${rating['2025'].avg_rating}</div>
+                    <p class="subtitle">Average Google Play rating in 2025</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 Rating</div>
+                            <div class="year-value">${rating['2024'].avg_rating}</div>
+                            <div class="stat-detail">stars</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">Rating Range</div>
+                            <div class="year-value" style="font-size: 1.8rem;">${rating['2025'].lowest} - ${rating['2025'].highest}</div>
+                            <div class="stat-detail">highest & lowest</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${comp.rating.change > 0 ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${comp.rating.change > 0 ? '↑' : '↓'} ${Math.abs(comp.rating.change).toFixed(2)} from 2024
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">${comp.rating.change > 0 ? 'People don\'t hate your game that much anymore! Progress!' : 'Down slightly... but 4.04 out of 5 is still better than that 2.1-rated Flappy Bird clone!'}</em></p>
+                </section>
+
+                <!-- Global Reach -->
+                <section class="gradient-1">
+                    <div class="emoji">🌍</div>
+                    <h2>Global Community</h2>
+                    <div class="big-number">${Object.keys(ua['2025'].countries).length}</div>
+                    <p class="subtitle">Countries represented in 2025</p>
+
+                    <div style="font-size: 1.3rem; margin-top: 2rem; margin-bottom: 2rem; opacity: 0.9; line-height: 2;">
+                        <strong>Top 4 countries:</strong> Egypt leads with ${formatNumber(ua['2025'].countries.Egypt)} players
+                    </div>
+
+                    <p class="subtitle" style="margin-bottom: 2rem;">
+                    <em style="opacity: 0.8;">You've gone international! Well, sort of. Mostly Egypt.</em></p>
+
+                    <div class="country-grid">
+                        <div class="country-card">
+                            <div class="country-flag">🇪🇬</div>
+                            <div class="country-name">Egypt</div>
+                            <div class="country-value">${formatNumber(ua['2025'].countries.Egypt)}</div>
+                        </div>
+                        <div class="country-card">
+                            <div class="country-flag">🇸🇳</div>
+                            <div class="country-name">Senegal</div>
+                            <div class="country-value">${formatNumber(ua['2025'].countries.Senegal)}</div>
+                        </div>
+                        <div class="country-card">
+                            <div class="country-flag">🇺🇸</div>
+                            <div class="country-name">United States</div>
+                            <div class="country-value">${formatNumber(ua['2025'].countries['United States'])}</div>
+                        </div>
+                        <div class="country-card">
+                            <div class="country-flag">🇬🇧</div>
+                            <div class="country-name">United Kingdom</div>
+                            <div class="country-value">${formatNumber(ua['2025'].countries['United Kingdom'])}</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AdMob Impressions -->
+                <section class="gradient-3">
+                    <div class="emoji">📺</div>
+                    <h2>Ads Served</h2>
+                    <div class="big-number">${formatNumber(insights.admob['2025'].total_impressions)}</div>
+                    <p class="subtitle">Total ad impressions in 2025</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 Impressions</div>
+                            <div class="year-value">${formatNumber(comp.admob_impressions['2024'])}</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">Ads per Player</div>
+                            <div class="year-value">${Math.round(insights.admob['2025'].total_impressions / ua['2025'].total_acquired)}</div>
+                            <div class="stat-detail">on average</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${comp.admob_impressions.change_pct > 0 ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${comp.admob_impressions.change_pct > 0 ? '↑' : '↓'} ${Math.abs(comp.admob_impressions.change_pct).toFixed(1)}% from 2024
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">The game is free, so you gotta watch ads! Nothing in life is truly free 😈</em></p>
+                </section>
+
+                <!-- AdMob Revenue -->
+                <section class="gradient-5">
+                    <div class="emoji">☕</div>
+                    <h2>Daily Coffee Money</h2>
+                    <div class="big-number">$${insights.admob['2025'].avg_daily_earnings.toFixed(2)}</div>
+                    <p class="subtitle">Average daily earnings in 2025</p>
+
+                    <div class="comparison" style="margin-top: 2rem;">
+                        <div class="year-card">
+                            <div class="year-label">2024 Daily Avg</div>
+                            <div class="year-value">$${insights.admob['2024'].avg_daily_earnings.toFixed(2)}</div>
+                            <div class="stat-detail">per day</div>
+                        </div>
+                        <div class="year-card">
+                            <div class="year-label">Total 2025</div>
+                            <div class="year-value">$${formatNumber(insights.admob['2025'].total_earnings)}</div>
+                            <div class="stat-detail">total earnings</div>
+                        </div>
+                    </div>
+
+                    <div class="change-badge ${comp.admob_earnings.change_pct > 0 ? 'positive' : 'negative'}" style="margin-top: 2rem;">
+                        ${comp.admob_earnings.change_pct > 0 ? '↑' : '↓'} ${Math.abs(comp.admob_earnings.change_pct).toFixed(1)}% from 2024
+                    </div>
+                    <p class="subtitle" style="margin-top: 1rem;">
+                    <em style="opacity: 0.8;">${comp.admob_earnings.change_pct > 0 ? 'Making more per day! Time to upgrade to a fancy latte!' : 'Down 42%... but $5.45 a day still buys you coffee! Or a fancy latte if you skip a day.'}</em></p>
+                </section>
+
+                <!-- Thank You -->
+                <section class="gradient-dark">
+                    <div class="emoji">🙏</div>
+                    <h1>Thank You!</h1>
+                    <p class="subtitle">To all ${formatNumber(ua['2025'].final_cumulative)} players who downloaded Apple of Fortune<br><br>
+                    <em style="opacity: 0.8;">Thanks for the downloads, the ratings, and for not uninstalling immediately.<br>Your ${((dau['2025'].avg_dau / ua['2025'].final_cumulative) * 100).toFixed(2)}% retention rate keeps us motivated!</em><br><br>
+                    Here's to 2026... and maybe some bug fixes! 🎮</p>
+                </section>
+            `;
+
+            document.getElementById('app').innerHTML = html;
+        }
+
+        function setupScrollProgress() {
+            window.addEventListener('scroll', () => {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrolled = window.scrollY;
+                const progress = (scrolled / documentHeight) * 100;
+                document.getElementById('progressFill').style.width = `${progress}%`;
+                updateNavigationArrows();
+            });
+        }
+
+        function updateNavigationArrows() {
+            const sections = document.querySelectorAll('section');
+            const scrolled = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            // Determine current section
+            let currentSection = 0;
+            sections.forEach((section, index) => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2) {
+                    currentSection = index;
+                }
+            });
+
+            // Update arrow states
+            const upArrow = document.getElementById('navUp');
+            const downArrow = document.getElementById('navDown');
+
+            if (currentSection === 0) {
+                upArrow.classList.add('disabled');
+            } else {
+                upArrow.classList.remove('disabled');
+            }
+
+            if (currentSection === sections.length - 1) {
+                downArrow.classList.add('disabled');
+            } else {
+                downArrow.classList.remove('disabled');
+            }
+        }
+
+        function navigateUp() {
+            const sections = document.querySelectorAll('section');
+            const scrolled = window.scrollY;
+            const windowHeight = window.innerHeight;
+
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const rect = sections[i].getBoundingClientRect();
+                if (rect.top < -10) {
+                    sections[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    break;
+                }
+            }
+        }
+
+        function navigateDown() {
+            const sections = document.querySelectorAll('section');
+            const windowHeight = window.innerHeight;
+
+            for (let i = 0; i < sections.length; i++) {
+                const rect = sections[i].getBoundingClientRect();
+                if (rect.top > 10) {
+                    sections[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    break;
+                }
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                navigateUp();
+            } else if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                navigateDown();
+            }
+        });
+
+        // Load insights on page load
+        loadInsights();
+    </script>
+</body>
+</html>

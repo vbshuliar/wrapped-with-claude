@@ -1,0 +1,40 @@
+{
+  "name": "wrapped-with-claude",
+  "version": "1.0.0",
+  "description": "A Spotify-inspired year-wrapped web application for Apple of Fortune Android game, showcasing 2025 statistics with comparisons to 2024",
+  "type": "web-application",
+  "hackathon": "Tessl x Anthropic After-Work Hack 2025",
+  "tech_stack": {
+    "backend": ["Python 3.x"],
+    "frontend": ["HTML5", "CSS3", "Vanilla JavaScript"],
+    "data": ["CSV", "JSON"]
+  },
+  "features": [
+    "Long-scroll Spotify-style design",
+    "14 animated sections",
+    "Year-over-year comparisons",
+    "Cumulative user acquisition tracking",
+    "AdMob monetization metrics",
+    "Mobile-first responsive design",
+    "Zero external dependencies"
+  ],
+  "data_sources": [
+    "user_acquisition.csv",
+    "dau.csv",
+    "mau.csv",
+    "installed_audience.csv",
+    "average_rating.csv",
+    "crashes.csv",
+    "admob_report.csv"
+  ],
+  "scripts": {
+    "process": "cd backend && python3 process_all_data.py",
+    "serve": "python3 -m http.server 8000"
+  },
+  "directories": {
+    "backend": "Python data processing scripts",
+    "data": "CSV input files and generated insights.json",
+    "frontend": "Web application HTML file",
+    "images": "Logo and gameplay screenshots"
+  }
+}
